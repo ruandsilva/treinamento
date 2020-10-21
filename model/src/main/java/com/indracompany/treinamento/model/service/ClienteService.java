@@ -26,5 +26,11 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 		return CpfUtil.validaCPF(cpf);
 	}
 	
+	public Cliente buscarClientePorNome(String nome) {
+
+			//throw new AplicacaoException(ExceptionValidacoes.ERRO_NOME_INVALIDO);
+			return clienteRepository.findByNome(nome);
+	}
+	
 
 }
